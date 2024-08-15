@@ -1,0 +1,141 @@
+Lista 3 
+
+Exercício 01 
+ 
+            double p1 = -1;
+
+     
+            while (p1 < 0)
+            {
+                Console.WriteLine("Digite a nota da P1 (valor positivo): ");
+                if (!double.TryParse(Console.ReadLine(), out p1) || p1 < 0)
+                {
+                    Console.WriteLine("Nota inválida. Por favor, digite um valor positivo.");
+                }
+            }
+
+Exercício 02
+
+            double primeiroValor = ObterValorPositivo("Digite o primeiro valor (valor positivo): ");
+            double segundoValor = ObterSegundoValorMaior(primeiroValor);
+
+           
+            Console.WriteLine($"Primeiro valor: {primeiroValor}");
+            Console.WriteLine($"Segundo valor: {segundoValor}");
+        }
+
+        static double ObterValorPositivo(string mensagem)
+        {
+            double valor;
+
+            while (true)
+            {
+                Console.Write(mensagem);
+                if (double.TryParse(Console.ReadLine(), out valor) && valor > 0)
+                {
+                    break;
+                }
+                Console.WriteLine("Valor inválido. Por favor, digite um valor positivo.");
+            }
+
+            return valor;
+        }
+
+        static double ObterSegundoValorMaior(double primeiroValor)
+        {
+            double segundoValor;
+
+            while (true)
+            {
+                Console.Write("Digite o segundo valor (deve ser maior que o primeiro valor): ");
+                if (double.TryParse(Console.ReadLine(), out segundoValor) && segundoValor > primeiroValor)
+                {
+                    break;
+                }
+                Console.WriteLine("Valor inválido. O segundo valor deve ser maior que o primeiro valor.");
+            }
+
+            return segundoValor;
+
+Exercício 03
+        string sexo = ObterSexo();
+
+       
+        Console.WriteLine($"Sexo inserido: {sexo}");
+    }
+
+    static string ObterSexo()
+    {
+        string sexo;
+
+        while (true)
+        {
+            Console.Write("Digite o sexo (F para feminino, M para masculino): ");
+            sexo = Console.ReadLine().Trim().ToUpper();
+
+            if (sexo == "F" || sexo == "M")
+            {
+                return sexo;
+            }
+            else
+            {
+                Console.WriteLine("Entrada inválida. Por favor, digite 'F' para feminino ou 'M' para masculino.");
+            }
+        }
+    }
+}
+
+Exercício 04
+    int numero = 5;
+    ExibirTabuada(numero);
+}
+
+static void ExibirTabuada(int numero)
+{
+    Console.WriteLine($"Tabuada do número {numero}:");
+
+    
+    for (int i = 1; i <= 10; i++)
+    {
+        Console.WriteLine($"{numero} x {i} = {numero * i}");
+    }
+Exercício 05
+
+            double valor = ObterValorPositivo();
+
+            ExibirTabuada(valor);
+        }
+
+        static double ObterValorPositivo()
+        {
+            double valor;
+
+            while (true)
+            {
+                Console.Write("Digite um valor positivo: ");
+                if (double.TryParse(Console.ReadLine(), out valor) && valor > 0)
+                {
+                    return valor;
+                }
+                else
+                {
+                    Console.WriteLine("Valor inválido. Por favor, digite um valor positivo.");
+                }
+            }
+        }
+
+        static void ExibirTabuada(double valor)
+        {
+            Console.WriteLine($"Tabuada do número {valor}:");
+
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine($"{valor} x {i} = {valor * i}");
+            }
+        }
+    }
+}
+Exercício 06
+
+
+
