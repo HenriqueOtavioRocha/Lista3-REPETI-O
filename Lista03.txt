@@ -1,6 +1,6 @@
 Lista 3 
 
-Exerc�cio 01 
+Exercício 01 
  
             double p1 = -1;
 
@@ -10,11 +10,11 @@ Exerc�cio 01
                 Console.WriteLine("Digite a nota da P1 (valor positivo): ");
                 if (!double.TryParse(Console.ReadLine(), out p1) || p1 < 0)
                 {
-                    Console.WriteLine("Nota inv�lida. Por favor, digite um valor positivo.");
+                    Console.WriteLine("Nota inválida. Por favor, digite um valor positivo.");
                 }
             }
 
-Exerc�cio 02
+Exercício 02
 
             double primeiroValor = ObterValorPositivo("Digite o primeiro valor (valor positivo): ");
             double segundoValor = ObterSegundoValorMaior(primeiroValor);
@@ -35,7 +35,7 @@ Exerc�cio 02
                 {
                     break;
                 }
-                Console.WriteLine("Valor inv�lido. Por favor, digite um valor positivo.");
+                Console.WriteLine("Valor inválido. Por favor, digite um valor positivo.");
             }
 
             return valor;
@@ -52,12 +52,12 @@ Exerc�cio 02
                 {
                     break;
                 }
-                Console.WriteLine("Valor inv�lido. O segundo valor deve ser maior que o primeiro valor.");
+                Console.WriteLine("Valor inválido. O segundo valor deve ser maior que o primeiro valor.");
             }
 
             return segundoValor;
 
-Exerc�cio 03
+Exercício 03
         string sexo = ObterSexo();
 
        
@@ -79,27 +79,27 @@ Exerc�cio 03
             }
             else
             {
-                Console.WriteLine("Entrada inv�lida. Por favor, digite 'F' para feminino ou 'M' para masculino.");
+                Console.WriteLine("Entrada inválida. Por favor, digite 'F' para feminino ou 'M' para masculino.");
             }
         }
     }
 }
 
-Exerc�cio 04
+Exercício 04
     int numero = 5;
     ExibirTabuada(numero);
 }
 
 static void ExibirTabuada(int numero)
 {
-    Console.WriteLine($"Tabuada do n�mero {numero}:");
+    Console.WriteLine($"Tabuada do número {numero}:");
 
     
     for (int i = 1; i <= 10; i++)
     {
         Console.WriteLine($"{numero} x {i} = {numero * i}");
     }
-Exerc�cio 05
+Exercício 05
 
             double valor = ObterValorPositivo();
 
@@ -119,14 +119,14 @@ Exerc�cio 05
                 }
                 else
                 {
-                    Console.WriteLine("Valor inv�lido. Por favor, digite um valor positivo.");
+                    Console.WriteLine("Valor inválido. Por favor, digite um valor positivo.");
                 }
             }
         }
 
         static void ExibirTabuada(double valor)
         {
-            Console.WriteLine($"Tabuada do n�mero {valor}:");
+            Console.WriteLine($"Tabuada do número {valor}:");
 
             for (int i = 1; i <= 10; i++)
             {
@@ -135,7 +135,280 @@ Exerc�cio 05
         }
     }
 }
-Exerc�cio 06
+
+
+
+Exercício 06
+
+ int x;
+
+ do
+ {
+     Console.WriteLine("Digite o valor positivo para o X:");
+     x = int.Parse(Console.ReadLine());
+
+ } while (x <= 0);
+
+ int a, b;
+ Console.WriteLine("Digite o valor de A:");
+
+ a = int.Parse(Console.ReadLine());
+
+ do
+ {
+     Console.Write("Digite o valor de B (maior que A): ");
+     b = int.Parse(Console.ReadLine());
+ } while (b <= a);
+
+ Console.WriteLine($"\nTabuada de {x} do intervalo de {b} para {a}:");
+ for (int i = b; i >= a; i--)
+ {
+     Console.WriteLine($"{x} x {i} = {x * i}");
+ }
+
+Exercício 07
+ for (int x = 1; x <= 20; x++)
+  {
+      Console.WriteLine($"\nTabuada do {x}:");
+      for (int i = 1; i <= 10; i++)
+      {
+          Console.WriteLine($"{x} x {i} = {x * i}");
+      }
+      Console.WriteLine("\nPressione qualquer tecla para continuar...");
+      Console.ReadKey();
+  }
+Exercício 08
+ int soma = 0;
+        for (int i = 1; i <= 100; i++)
+        {
+            soma += i;
+        }
+        Console.WriteLine("A soma dos números inteiros positivos de 1 a 100 é: " + soma);
+    }
+Exercício 09
+int n = 30; 
+ long[] fibonacci = new long[n];
+
+ fibonacci[0] = 1;
+ fibonacci[1] = 1;
+
+ 
+ for (int i = 2; i < n; i++)
+ {
+     fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+ }
+
+ Console.WriteLine("Os 30 primeiros valores da série de Fibonacci são:");
+ for (int i = 0; i < n; i++)
+ {
+     Console.Write(fibonacci[i] + " ");
+ }
+
+Exercício 10 
+ int[] valores = new int[10];
+    int maiorValor = int.MinValue;
+    int soma = 0;
+
+    for (int i = 0; i < 10; i++)
+    {
+        Console.Write($"Digite o valor positivo {i + 1}: ");
+        bool entradaValida = int.TryParse(Console.ReadLine(), out int valor);
+
+        while (!entradaValida || valor <= 0)
+        {
+            Console.WriteLine("Erro: Por favor, digite um valor positivo.");
+            Console.Write($"Digite o valor positivo {i + 1}: ");
+            entradaValida = int.TryParse(Console.ReadLine(), out valor);
+        }
+
+        valores[i] = valor;
+        soma += valor;
+        if (valor > maiorValor)
+        {
+            maiorValor = valor;
+        }
+    }
+
+    double media = soma / 10.0;
+
+    Console.WriteLine($"\nO maior valor é: {maiorValor}");
+    Console.WriteLine($"A soma dos valores é: {soma}");
+    Console.WriteLine($"A média aritmética dos valores é: {media:F2}");
+}
+Exercício 11
+int n;
+    do
+    {
+        Console.Write("Digite a quantidade de valores (positivo e menor que 20): ");
+        bool entradaValida = int.TryParse(Console.ReadLine(), out n);
+        if (!entradaValida || n <= 0 || n >= 20)
+        {
+            Console.WriteLine("Erro: A quantidade deve ser um número positivo menor que 20.");
+        }
+    } while (n <= 0 || n >= 20);
+
+    int[] valores = new int[n];
+    int soma = 0;
+    int maiorValor = int.MinValue;
+    int menorValor = int.MaxValue;
+    int positivos = 0;
+    int negativos = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        Console.Write($"Digite o valor {i + 1}: ");
+        bool entradaValida = int.TryParse(Console.ReadLine(), out int valor);
+
+        while (!entradaValida)
+        {
+            Console.WriteLine("Erro: Por favor, digite um valor válido.");
+            Console.Write($"Digite o valor {i + 1}: ");
+            entradaValida = int.TryParse(Console.ReadLine(), out valor);
+        }
+
+        valores[i] = valor;
+        soma += valor;
+        if (valor > maiorValor)
+        {
+            maiorValor = valor;
+        }
+        if (valor < menorValor)
+        {
+            menorValor = valor;
+        }
+        if (valor > 0)
+        {
+            positivos++;
+        }
+        else if (valor < 0)
+        {
+            negativos++;
+        }
+    }
+
+    double media = soma / (double)n;
+    double porcentagemPositivos = (positivos / (double)n) * 100;
+    double porcentagemNegativos = (negativos / (double)n) * 100;
+
+    Console.WriteLine($"\nO maior valor é: {maiorValor}");
+    Console.WriteLine($"O menor valor é: {menorValor}");
+    Console.WriteLine($"A soma dos valores é: {soma}");
+    Console.WriteLine($"A média aritmética dos valores é: {media:F2}");
+    Console.WriteLine($"A porcentagem de valores positivos é: {porcentagemPositivos:F2}%");
+    Console.WriteLine($"A porcentagem de valores negativos é: {porcentagemNegativos:F2}%");
+}
+Exercício 12
+  bool executarNovamente;
+    do
+    {
+        int n;
+        do
+        {
+            Console.Write("Digite a quantidade de valores (positivo e menor que 20): ");
+            bool entradaValida = int.TryParse(Console.ReadLine(), out n);
+            if (!entradaValida || n <= 0 || n >= 20)
+            {
+                Console.WriteLine("Erro: A quantidade deve ser um número positivo menor que 20.");
+            }
+        } while (n <= 0 || n >= 20);
+
+        int[] valores = new int[n];
+        int soma = 0;
+        int maiorValor = int.MinValue;
+        int menorValor = int.MaxValue;
+        int positivos = 0;
+        int negativos = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"Digite o valor {i + 1}: ");
+            bool entradaValida = int.TryParse(Console.ReadLine(), out int valor);
+
+            while (!entradaValida)
+            {
+                Console.WriteLine("Erro: Por favor, digite um valor válido.");
+                Console.Write($"Digite o valor {i + 1}: ");
+                entradaValida = int.TryParse(Console.ReadLine(), out valor);
+            }
+
+            valores[i] = valor;
+            soma += valor;
+            if (valor > maiorValor)
+            {
+                maiorValor = valor;
+            }
+            if (valor < menorValor)
+            {
+                menorValor = valor;
+            }
+            if (valor > 0)
+            {
+                positivos++;
+            }
+            else if (valor < 0)
+            {
+                negativos++;
+            }
+        }
+
+        double media = soma / (double)n;
+        double porcentagemPositivos = (positivos / (double)n) * 100;
+        double porcentagemNegativos = (negativos / (double)n) * 100;
+
+        Console.WriteLine($"\nO maior valor é: {maiorValor}");
+        Console.WriteLine($"O menor valor é: {menorValor}");
+        Console.WriteLine($"A soma dos valores é: {soma}");
+        Console.WriteLine($"A média aritmética dos valores é: {media:F2}");
+        Console.WriteLine($"A porcentagem de valores positivos é: {porcentagemPositivos:F2}%");
+        Console.WriteLine($"A porcentagem de valores negativos é: {porcentagemNegativos:F2}%");
+
+        Console.Write("\nDeseja executar o programa novamente? (S/N): ");
+        string resposta = Console.ReadLine().ToUpper();
+
+        while (resposta != "S" && resposta != "N")
+        {
+            Console.WriteLine("Erro: Resposta inválida. Por favor, digite 'S' para sim ou 'N' para não.");
+            Console.Write("Deseja executar o programa novamente? (S/N): ");
+            resposta = Console.ReadLine().ToUpper();
+        }
+
+        executarNovamente = resposta == "S";
+
+    } while (executarNovamente);
+
+}
+Exercício 13 
+ bool continuar = true;
+
+        while (continuar)
+        {
+            int numero = -1;
+            while (numero < 0)
+            {
+                Console.Write("Digite um número não negativo: ");
+                if (!int.TryParse(Console.ReadLine(), out numero) || numero < 0)
+                {
+                    Console.WriteLine("Valor inválido. Por favor, digite um número não negativo.");
+                }
+            }
+
+            long fatorial = 1;
+            for (int i = 1; i <= numero; i++)
+            {
+                fatorial *= i;
+            }
+
+            Console.WriteLine($"O fatorial de {numero} é: {fatorial}");
+
+            Console.Write("Deseja fazer um novo cálculo? (S/N): ");
+            string resposta = Console.ReadLine().ToUpper();
+            while (resposta != "S" && resposta != "N")
+            {
+                Console.Write("Resposta inválida. Deseja fazer um novo cálculo? (S/N): ");
+                resposta = Console.ReadLine().ToUpper();
+            }
+
+            continuar = resposta == "S";
 
 
 
